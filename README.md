@@ -31,15 +31,11 @@ The local crate pulls in the [enchant](https://crates.io/crates/enchant) crate t
 
 ## API
 
-Only `check/2` and `check_word/2` are exposed. All the dictionnary and broker from `libenchant` are not exposed because I do not need them right now.
+Only `check/2` is exposed. All the dictionnary and broker from `libenchant` are not exposed because I do not need them right now.
 
 ## Usage
 
 ```
-iex> Enchant.check_word("Hello", "en_US")
-{:ok, %Enchant.Word{correct: true, suggestions: [], word: "Hello"}}
-iex> Enchant.check_word("Hella", "en_US")
-{:ok, %Enchant.Word{correct: false, suggestions: ["Hell", "Hello", ...], word: "Hella"}}
 iex> Enchant.check("Enchanté, je vous présente ma librairie", "fr_CA")
 {:ok,
  [
